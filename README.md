@@ -1,3 +1,6 @@
+## Overview
+In this project I am rebuilding my capstone project from the MIT xPro bootcamp.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
