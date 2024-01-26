@@ -7,26 +7,6 @@ export default function Auth() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
-
-    setLoading(true);
-
-    // Sign in logic
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (error) {
-      alert(error.error_description || error.message);
-    } else {
-      alert("Login successful!");
-    }
-
-    setLoading(false);
-  };
-
   const handleSignup = async (event) => {
     event.preventDefault();
 
@@ -51,9 +31,8 @@ export default function Auth() {
   return (
     <div className="row flex flex-center">
       <div className="col-6 form-widget">
-        <h1 className="header">Supabase + React</h1>
-        <p className="description">Sign in or Sign up with your email below</p>
-        <form className="form-widget" onSubmit={handleLogin}>
+        <p className="description">Sign up with your email below</p>
+        <form className="form-widget" onSubmit={handleSignup}>
           <div>
             <input
               className="inputField"
@@ -64,23 +43,6 @@ export default function Auth() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div>
-            <input
-              className="inputField"
-              type="password"
-              placeholder="Your password"
-              value={password}
-              required={true}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <button className={"button block"} disabled={loading}>
-              {loading ? <span>Loading</span> : <span>Login</span>}
-            </button>
-          </div>
-        </form>
-        <form className="form-widget" onSubmit={handleSignup}>
           <div>
             <input
               className="inputField"
