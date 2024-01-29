@@ -51,6 +51,7 @@ export default function Account({ session }) {
       <table>
         <thead>
           <tr>
+            <th>User ID</th>
             <th>Email</th>
             <th>Balance</th>
           </tr>
@@ -58,6 +59,7 @@ export default function Account({ session }) {
         <tbody>
           {userData && (
             <tr>
+              <td>{userData.id}</td>
               <td>{userData.email}</td>
               <td>{userData.balance}</td>
             </tr>

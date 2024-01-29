@@ -5,24 +5,19 @@ export default function Auth() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
 
   const handleSignup = async (event) => {
     event.preventDefault();
-
     setLoading(true);
-
     // Sign up logic
     const { user, error } = await supabase.auth.signUp({
       email,
       password,
-      username,
     });
-
     if (error) {
       alert(error.error_description || error.message);
     } else {
-      alert("Signup successful! Check your email for verification.");
+      alert("Signup successful!");
     }
 
     setLoading(false);
@@ -41,16 +36,6 @@ export default function Auth() {
               value={email}
               required={true}
               onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <input
-              className="inputField"
-              type="text"
-              placeholder="Username"
-              value={username}
-              required={true}
-              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div>
