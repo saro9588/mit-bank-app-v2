@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import Auth from "./Auth";
 import Account from "./Account";
+import Transactions from "./Transactions";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -22,7 +23,10 @@ function App() {
       {!session ? (
         <Auth />
       ) : (
-        <Account key={session.user.id} session={session} />
+        <>
+          <Account key={session.user.id} session={session} />
+          <Transactions key={session.user.id} session={session} />
+        </>
       )}
     </div>
   );

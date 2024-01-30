@@ -10,7 +10,6 @@ export default function Account({ session }) {
     async function getAccount() {
       setLoading(true);
       const { user } = session;
-
       const { data, error } = await supabase
         .from("accounts")
         .select("id, username, email, balance")
@@ -66,6 +65,7 @@ export default function Account({ session }) {
           )}
         </tbody>
       </table>
+
       <div>
         <button
           className="button block"
