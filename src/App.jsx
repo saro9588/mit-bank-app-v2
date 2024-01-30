@@ -28,7 +28,7 @@ function App() {
             <h2>Welcome to the Bank App</h2>
             <h4>
               Here you can create an account, deposit, withdraw money and check
-              you balance
+              you balance.
             </h4>
           </div>
           <Auth />
