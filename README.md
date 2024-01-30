@@ -2,6 +2,11 @@
 In this project I am rebuilding my capstone project from the MIT xPro bootcamp.
 For this version 2 of the Bank App, I am using a supabase/postgres database and authentication and authorization utilizing the RLS. 
 
+## Improvements from version 1 of the Bank-App
+1)I implemented an actual user authentication upon logging in. 
+2)Each logged in user is only allowed to see his/her row from the database. 
+3)Each user is only allowed to update their own data. 
+
 ## Future Improvements
 1)Create a new table in the database that has a relationship one-to-many with each user that stores a history of all the transactions.
 2)Create a new component that shows the history of all the deposits and withdrawals by a user.
