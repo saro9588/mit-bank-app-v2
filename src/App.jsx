@@ -2,9 +2,10 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import Auth from "./Auth";
+import Login from "./Login";
 import Account from "./Account";
 import Transactions from "./Transactions";
-import "@radix-ui/themes/styles.css";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -22,7 +23,11 @@ function App() {
   return (
     <div className="container" style={{ padding: "50px 0 100px 0" }}>
       {!session ? (
-        <Auth />
+        <>
+          <Auth />
+          <p>-- or --</p>
+          <Login />
+        </>
       ) : (
         <>
           <Account key={session.user.id} session={session} />

@@ -16,3 +16,7 @@
   justify-content: center;
   gap: 2px;
 }
+
+.form-login {
+  background-color: beige;
+}

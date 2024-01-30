@@ -9,8 +9,8 @@ export default function Auth() {
   const handleSignup = async (event) => {
     event.preventDefault();
     setLoading(true);
-    // Sign up logic
-    const { user, error } = await supabase.auth.signUp({
+
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
     });
@@ -26,8 +26,8 @@ export default function Auth() {
   return (
     <div className="row flex flex-center">
       <div className="col-6 form-widget">
-        <p className="description">Sign up with your email below</p>
-        <form className="form-widget" onSubmit={handleSignup}>
+        <p className="description">Sign up</p>
+        <form className="form-login" onSubmit={handleSignup}>
           <div>
             <input
               className="inputField"

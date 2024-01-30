@@ -12,7 +12,7 @@ export default function Account({ session }) {
       const { user } = session;
       const { data, error } = await supabase
         .from("accounts")
-        .select("id, username, email, balance")
+        .select("id, balance")
         .eq("id", user.id)
         .single();
 
@@ -51,7 +51,6 @@ export default function Account({ session }) {
         <thead>
           <tr>
             <th>User ID</th>
-            <th>Email</th>
             <th>Balance</th>
           </tr>
         </thead>
@@ -59,8 +58,7 @@ export default function Account({ session }) {
           {userData && (
             <tr>
               <td>{userData.id}</td>
-              <td>{userData.email}</td>
-              <td>{userData.balance}</td>
+              <td>${userData.balance}</td>
             </tr>
           )}
         </tbody>
