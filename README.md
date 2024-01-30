@@ -1,8 +1,9 @@
 ## Overview
 In this project I am rebuilding my capstone project from the MIT xPro bootcamp.
+For this version 2 of the Bank App, I am using a supabase/postgres database and authentication and authorization utilizing the RLS. 
 
 ## Future Improvements
-1)Create a new table in the database that has a relationship one-to-many with each user that sotres a history of all the transactions.
+1)Create a new table in the database that has a relationship one-to-many with each user that stores a history of all the transactions.
 2)Create a new component that shows the history of all the deposits and withdrawals by a user.
 
 ## Getting Started
