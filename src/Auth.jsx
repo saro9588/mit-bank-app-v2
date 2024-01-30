@@ -24,37 +24,37 @@ export default function Auth() {
   };
 
   return (
-    <div className="row flex flex-center">
-      <div className="col-6 form-widget">
-        <p className="description">Sign up</p>
-        <form className="form-login" onSubmit={handleSignup}>
-          <div>
-            <input
-              className="inputField"
-              type="email"
-              placeholder="Your email"
-              value={email}
-              required={true}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <input
-              className="inputField"
-              type="password"
-              placeholder="Your password"
-              value={password}
-              required={true}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <button className={"button block"} disabled={loading}>
-              {loading ? <span>Loading</span> : <span>Sign up</span>}
-            </button>
-          </div>
-        </form>
-      </div>
+    <div>
+      <h3>Sign up</h3>
+      <form onSubmit={handleSignup}>
+        <div style={{ marginBottom: "10px" }}>
+          <input
+            className="inputField"
+            type="email"
+            placeholder="Your email"
+            value={email}
+            required={true}
+            style={{ width: "300px", height: "30px" }}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div style={{ marginBottom: "10px" }}>
+          <input
+            className="inputField"
+            type="password"
+            placeholder="Your password"
+            value={password}
+            required={true}
+            style={{ width: "300px", height: "30px" }}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div>
+          <button style={{ marginTop: "10px" }} disabled={loading}>
+            {loading ? <span>Loading</span> : <span>Sign up</span>}
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

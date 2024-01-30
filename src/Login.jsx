@@ -20,37 +20,35 @@ const login = () => {
   };
 
   return (
-    <div className="row flex flex-center">
-      <div className="col-6 form-widget">
-        <p className="description">Sign in</p>
-        <form className="form-widget" onSubmit={handleLogIn}>
-          <div>
-            <input
-              className="inputField"
-              type="email"
-              placeholder="Your email"
-              value={userEmail}
-              required={true}
-              onChange={(e) => setUserEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <input
-              className="inputField"
-              type="password"
-              placeholder="Your password"
-              value={userPassword}
-              required={true}
-              onChange={(e) => setUserPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <button className={"button block"}>
-              <span>Sign in</span>
-            </button>
-          </div>
-        </form>
-      </div>
+    <div>
+      <h3>Sign in</h3>
+      <form onSubmit={handleLogIn}>
+        <div style={{ marginBottom: "10px" }}>
+          <input
+            type="email"
+            placeholder="Your email"
+            value={userEmail}
+            required={true}
+            style={{ width: "300px", height: "30px" }}
+            onChange={(e) => setUserEmail(e.target.value)}
+          />
+        </div>
+        <div style={{ marginBottom: "10px" }}>
+          <input
+            type="password"
+            placeholder="Your password"
+            value={userPassword}
+            required={true}
+            style={{ width: "300px", height: "30px" }}
+            onChange={(e) => setUserPassword(e.target.value)}
+          />
+        </div>
+        <div>
+          <button style={{ marginTop: "10px" }}>
+            <span>Sign in</span>
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

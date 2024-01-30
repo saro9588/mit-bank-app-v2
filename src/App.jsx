@@ -21,9 +21,16 @@ function App() {
   }, []);
 
   return (
-    <div className="container" style={{ padding: "50px 0 100px 0" }}>
+    <div>
       {!session ? (
         <>
+          <div>
+            <h2>Welcome to the Bank App</h2>
+            <h4>
+              Here you can create an account, deposit, withdraw money and check
+              you balance
+            </h4>
+          </div>
           <Auth />
           <p>-- or --</p>
           <Login />

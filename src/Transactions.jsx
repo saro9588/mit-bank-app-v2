@@ -74,65 +74,34 @@ const Transactions = ({ session }) => {
   return (
     <div className="form">
       <h2>Transactions</h2>
-      <p>Current Balance: ${balance}</p>
-      {/* <div className="deposit">
-        <label>Deposit:</label>
+      <h3>Current Balance: ${balance}</h3>
+      <div className="deposit">
+        <h3>Deposit</h3>
         <input
           type="number"
           min="0"
           value={deposit}
-          width=""
+          style={{ width: "300px", height: "30px" }}
           onChange={(e) => setDeposit(Number(e.target.value))}
         />
-        <button onClick={handleDeposit}>Deposit</button>
+        <div style={{ marginTop: "10px" }}>
+          <button onClick={handleDeposit}>Deposit</button>
+        </div>
       </div>
+      -- or --
       <div className="withdraw">
-        <label>Withdraw:</label>
+        <h3>Withdraw</h3>
         <input
           type="number"
           min="0"
           value={withdraw}
+          style={{ width: "300px", height: "30px" }}
           onChange={(e) => setWithdraw(Number(e.target.value))}
         />
-        <button onClick={handleWithdraw}>Withdraw</button>
-      </div> */}
-      <Flex direction="column" gap="3" style={{ maxWidth: 350 }}>
-        <Card variant="classic">
-          <Text as="div" size="2" weight="bold">
-            Deposit
-          </Text>
-          <Text as="div" color="gray" size="2">
-            <div className="deposit">
-              <input
-                type="number"
-                min="0"
-                value={deposit}
-                width=""
-                onChange={(e) => setDeposit(Number(e.target.value))}
-              />
-              <Button onClick={handleDeposit}>Deposit</Button>
-            </div>
-          </Text>
-        </Card>
-
-        <Card variant="classic">
-          <Text as="div" size="2" weight="bold">
-            Withdraw
-          </Text>
-          <Text as="div" color="gray" size="2">
-            <div className="withdraw">
-              <input
-                type="number"
-                min="0"
-                value={withdraw}
-                onChange={(e) => setWithdraw(Number(e.target.value))}
-              />
-              <Button onClick={handleWithdraw}>Withdraw</Button>
-            </div>
-          </Text>
-        </Card>
-      </Flex>
-
+        <div style={{ marginTop: "10px" }}>
+          <button onClick={handleWithdraw}>Withdraw</button>
+        </div>
+      </div>
       <div>{error}</div>
     </div>
   );

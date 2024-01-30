@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  min-height: 100vh;
+  background-color: antiquewhite;
 }
 
 .deposit,
@@ -15,8 +14,4 @@
   display: grid;
   justify-content: center;
   gap: 2px;
-}
-
-.form-login {
-  background-color: beige;
 }

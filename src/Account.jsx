@@ -41,13 +41,31 @@ export default function Account({ session }) {
   return (
     <div>
       {loading && <p>Loading...</p>}
-      <div>
+      <div
+        style={{
+          margin: "10px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+          }}
+        >
+          <h3>Welcome:</h3>
+          <h3>{session.user.email}</h3>
+        </div>
         <div>
-          <p>Logged in as:</p>
-          <p>{session.user.email}</p>
+          <button type="button" onClick={() => supabase.auth.signOut()}>
+            Sign Out
+          </button>
         </div>
       </div>
-      <table>
+
+      {/* <table>
         <thead>
           <tr>
             <th>User ID</th>
@@ -62,17 +80,7 @@ export default function Account({ session }) {
             </tr>
           )}
         </tbody>
-      </table>
-
-      <div>
-        <button
-          className="button block"
-          type="button"
-          onClick={() => supabase.auth.signOut()}
-        >
-          Sign Out
-        </button>
-      </div>
+      </table> */}
     </div>
   );
 }
