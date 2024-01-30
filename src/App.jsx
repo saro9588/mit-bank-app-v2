@@ -4,6 +4,7 @@ import { supabase } from "./supabaseClient";
 import Auth from "./Auth";
 import Account from "./Account";
 import Transactions from "./Transactions";
+import "@radix-ui/themes/styles.css";
 
 function App() {
   const [session, setSession] = useState(null);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
+import { Flex, Text, Button, Card } from "@radix-ui/themes";
 
 const Transactions = ({ session }) => {
   const [deposit, setDeposit] = useState(0);
@@ -71,20 +72,21 @@ const Transactions = ({ session }) => {
   };
 
   return (
-    <div>
+    <div className="form">
       <h2>Transactions</h2>
-      <div>
-        <p>Current Balance: ${balance}</p>
+      <p>Current Balance: ${balance}</p>
+      {/* <div className="deposit">
         <label>Deposit:</label>
         <input
           type="number"
           min="0"
           value={deposit}
+          width=""
           onChange={(e) => setDeposit(Number(e.target.value))}
         />
         <button onClick={handleDeposit}>Deposit</button>
       </div>
-      <div>
+      <div className="withdraw">
         <label>Withdraw:</label>
         <input
           type="number"
@@ -93,7 +95,44 @@ const Transactions = ({ session }) => {
           onChange={(e) => setWithdraw(Number(e.target.value))}
         />
         <button onClick={handleWithdraw}>Withdraw</button>
-      </div>
+      </div> */}
+      <Flex direction="column" gap="3" style={{ maxWidth: 350 }}>
+        <Card variant="classic">
+          <Text as="div" size="2" weight="bold">
+            Deposit
+          </Text>
+          <Text as="div" color="gray" size="2">
+            <div className="deposit">
+              <input
+                type="number"
+                min="0"
+                value={deposit}
+                width=""
+                onChange={(e) => setDeposit(Number(e.target.value))}
+              />
+              <Button onClick={handleDeposit}>Deposit</Button>
+            </div>
+          </Text>
+        </Card>
+
+        <Card variant="classic">
+          <Text as="div" size="2" weight="bold">
+            Withdraw
+          </Text>
+          <Text as="div" color="gray" size="2">
+            <div className="withdraw">
+              <input
+                type="number"
+                min="0"
+                value={withdraw}
+                onChange={(e) => setWithdraw(Number(e.target.value))}
+              />
+              <Button onClick={handleWithdraw}>Withdraw</Button>
+            </div>
+          </Text>
+        </Card>
+      </Flex>
+
       <div>{error}</div>
     </div>
   );
