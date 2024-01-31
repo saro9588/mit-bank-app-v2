@@ -20,8 +20,8 @@ const login = () => {
   };
 
   return (
-    <div>
-      <h3>Sign in</h3>
+    <div className="card">
+      <h3 className="h3">Sign in</h3>
       <form onSubmit={handleLogIn}>
         <div style={{ marginBottom: "10px" }}>
           <input

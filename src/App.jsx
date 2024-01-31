@@ -24,16 +24,18 @@ function App() {
     <div>
       {!session ? (
         <>
-          <div>
+          <div className="main">
             <h2>Welcome to the Bank App</h2>
             <h4>
               Here you can create an account, deposit, withdraw money and check
-              you balance.
+              your balance.
             </h4>
+            <div>
+              <Auth />
+              <p>-- or --</p>
+              <Login />
+            </div>
           </div>
-          <Auth />
-          <p>-- or --</p>
-          <Login />
         </>
       ) : (
         <>

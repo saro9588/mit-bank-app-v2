@@ -24,7 +24,7 @@ export default function Auth() {
   };
 
   return (
-    <div>
+    <div className="card">
       <h3>Sign up</h3>
       <form onSubmit={handleSignup}>
         <div style={{ marginBottom: "10px" }}>
