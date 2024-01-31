@@ -39,8 +39,10 @@ function App() {
         </>
       ) : (
         <>
-          <Account key={session.user.id} session={session} />
-          <Transactions key={session.user.id} session={session} />
+          <div className="main">
+            <Account key={session.user.id} session={session} />
+            <Transactions key={session.user.id} session={session} />
+          </div>
         </>
       )}
     </div>

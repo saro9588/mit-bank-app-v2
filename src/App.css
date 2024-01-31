@@ -8,6 +8,13 @@
 .withdraw {
   display: grid;
   gap: 3px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
 }
 
 .form {
@@ -24,16 +31,6 @@
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-}
-
-/* Style for the card title */
-.card h2 {
-  color: #333;
-}
-
-/* Style for the card content */
-.card p {
-  color: #666;
 }
 
 .main {

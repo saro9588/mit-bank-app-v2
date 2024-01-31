@@ -74,7 +74,9 @@ const Transactions = ({ session }) => {
   return (
     <div className="form">
       <h2>Transactions</h2>
-      <h3>Current Balance: ${balance}</h3>
+      <div className="card">
+        <h3>Current Balance: ${balance}</h3>
+      </div>
       <div className="deposit">
         <h3>Deposit</h3>
         <input
