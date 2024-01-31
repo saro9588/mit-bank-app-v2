@@ -37,3 +37,7 @@
   display: grid;
   justify-content: center;
 }
+
+.h4 {
+  padding: 2px;
+}

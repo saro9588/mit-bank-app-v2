@@ -26,7 +26,7 @@ function App() {
         <>
           <div className="main">
             <h2>Welcome to the Bank App</h2>
-            <h4>
+            <h4 className="h4">
               Here you can create an account, deposit, withdraw money and check
               your balance.
             </h4>
