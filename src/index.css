@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   min-height: 100vh;
+  background-color: #9a7979;
 }
 
 a {
@@ -58,4 +59,22 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #d5c5c5; /* White text color in dark mode */
+  }
+
+  a {
+    color: #747bff; /* Links color in dark mode */
+  }
+
+  button {
+    background-color: #313131; /* Button background color in dark mode */
+    color: #fff; /* Button text color in dark mode */
+    border-color: #646cff; /* Button border color in dark mode */
+  }
+
+  /* Add more styles for other elements as needed */
 }
