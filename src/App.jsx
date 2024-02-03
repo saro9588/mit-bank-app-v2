@@ -3,9 +3,8 @@ import { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import Auth from "./Auth";
 import Login from "./Login";
-import Account from "./Account";
+// import Account from "./Account";
 import Transactions from "./Transactions";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -16,7 +15,13 @@ function App() {
     });
 
     supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
+      if (session) {
+        setSession(session);
+        const { user } = session;
+      } else {
+        setSession(null);
+      }
+      console.log("user session:", session);
     });
   }, []);
 
@@ -40,7 +45,15 @@ function App() {
       ) : (
         <>
           <div className="main">
-            <Account key={session.user.id} session={session} />
+            {/* <Account
+              key={session.user.id}
+              session={session}
+              setSession={setSession}
+            /> */}
+            <div>
+              <h3>Welcome</h3>
+              <h3>{`${session.user.email}!`}</h3>
+            </div>
             <Transactions key={session.user.id} session={session} />
           </div>
         </>

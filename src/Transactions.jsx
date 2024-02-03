@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
-import { Flex, Text, Button, Card } from "@radix-ui/themes";
 
 const Transactions = ({ session }) => {
-  const [deposit, setDeposit] = useState(0);
-  const [withdraw, setWithdraw] = useState(0);
+  const [deposit, setDeposit] = useState("");
+  const [withdraw, setWithdraw] = useState("");
   const [balance, setBalance] = useState(0);
   const [error, setError] = useState("");
   const { user } = session;
@@ -42,7 +41,7 @@ const Transactions = ({ session }) => {
     } else {
       console.log("Deposit successful. New balance:", newBalance);
       setBalance(newBalance);
-      setDeposit(0);
+      setDeposit("");
     }
   };
 
@@ -52,7 +51,6 @@ const Transactions = ({ session }) => {
       setError("Insufficient funds for withdrawal");
       return;
     }
-
     const newBalance = balance - withdraw;
     const { data, error } = await supabase.from("accounts").upsert([
       {
@@ -67,8 +65,13 @@ const Transactions = ({ session }) => {
       console.log("Withdrawal successful. New balance:", newBalance);
       setBalance(newBalance);
       setError("");
-      setWithdraw(0);
+      setWithdraw("");
     }
+  };
+
+  const handleSignOut = () => {
+    supabase.auth.signOut();
+    // console.log("User Session:", session.user);
   };
 
   return (
@@ -103,6 +106,11 @@ const Transactions = ({ session }) => {
         <div style={{ marginTop: "10px" }}>
           <button onClick={handleWithdraw}>Withdraw</button>
         </div>
+      </div>
+      <div>
+        <button type="button" onClick={handleSignOut}>
+          Sign Out
+        </button>
       </div>
       <div>{error}</div>
     </div>
