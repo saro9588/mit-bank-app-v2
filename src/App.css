@@ -2,7 +2,6 @@
   text-align: center;
   min-height: 100vh;
   background-color: rgb(246, 241, 241);
-  min-height: 100vh;
 }
 
 .deposit,
@@ -15,22 +14,20 @@
   padding: 20px;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 500px;
   max-width: 600px;
 }
 
 .form {
   display: grid;
   justify-content: center;
-  gap: 2px;
 }
 
 .card {
   margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
+  padding: 0 20px 0 20px;
+  margin: 0 20px 0 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   background-color: rgb(188, 204, 190);

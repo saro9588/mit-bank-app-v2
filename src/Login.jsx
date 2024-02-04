@@ -44,7 +44,7 @@ const login = () => {
           />
         </div>
         <div>
-          <button style={{ marginTop: "10px" }}>
+          <button style={{ marginTop: "10px", marginBottom: "10px" }}>
             <span>Sign in</span>
           </button>
         </div>
