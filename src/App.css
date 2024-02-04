@@ -44,13 +44,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: white; /* Text color in dark mode */
-    background-color: #333; /* Dark background color in dark mode */
+    color: white;
+    background-color: #333;
   }
 
   .card {
-    background-color: #444; /* Dark background color for cards in dark mode */
+    background-color: #444;
   }
-
-  /* Add more styles for other elements as needed */
 }

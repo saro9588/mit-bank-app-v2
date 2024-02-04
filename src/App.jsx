@@ -50,7 +50,13 @@ function App() {
               session={session}
               setSession={setSession}
             /> */}
-            <div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "4px",
+              }}
+            >
               <h3>Welcome</h3>
               <h3>{`${session.user.email}!`}</h3>
             </div>
