@@ -47,22 +47,13 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    color: white; /* White text color in dark mode */
-    background-color: black; /* Black background color in dark mode */
+    color: black;
+    background-color: rgb(246, 241, 241);
   }
 
-  a {
-    color: #dedede; /* Links color in dark mode */
+  .card {
+    background-color: rgb(188, 204, 190);
   }
-
-  button {
-    background-color: #390707; /* Button background color in dark mode */
-    color: white; /* Button text color in dark mode */
-    border-color: #646cff; /* Button border color in dark mode */
-  }
-
-  /* Add more styles for other elements as needed */
 }
