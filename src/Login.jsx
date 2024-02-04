@@ -21,7 +21,7 @@ const login = () => {
 
   return (
     <div className="card">
-      <h3 className="h3">Sign in</h3>
+      <h3>Sign in</h3>
       <form onSubmit={handleLogIn}>
         <div style={{ marginBottom: "10px" }}>
           <input
@@ -29,7 +29,7 @@ const login = () => {
             placeholder="Your email"
             value={userEmail}
             required={true}
-            style={{ width: "300px", height: "30px" }}
+            style={{ width: "300px", height: "30px", borderRadius: "8px" }}
             onChange={(e) => setUserEmail(e.target.value)}
           />
         </div>
@@ -39,7 +39,7 @@ const login = () => {
             placeholder="Your password"
             value={userPassword}
             required={true}
-            style={{ width: "300px", height: "30px" }}
+            style={{ width: "300px", height: "30px", borderRadius: "8px" }}
             onChange={(e) => setUserPassword(e.target.value)}
           />
         </div>

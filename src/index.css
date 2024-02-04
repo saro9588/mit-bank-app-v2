@@ -2,16 +2,15 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light;
+  color: black;
   min-height: 100vh;
   background-color: #9a7979;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #8c8fb5;
   text-decoration: inherit;
 }
 a:hover {
@@ -20,7 +19,7 @@ a:hover {
 
 body {
   margin: 0;
-  background-color: antiquewhite;
+  background-color: rgb(16, 12, 8);
   min-height: 100vh;
 }
 
@@ -36,7 +35,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #86a390;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -46,35 +45,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #1a1a1a;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #d5c5c5; /* White text color in dark mode */
-  }
-
-  a {
-    color: #747bff; /* Links color in dark mode */
-  }
-
-  button {
-    background-color: #313131; /* Button background color in dark mode */
-    color: #fff; /* Button text color in dark mode */
-    border-color: #646cff; /* Button border color in dark mode */
-  }
-
-  /* Add more styles for other elements as needed */
 }

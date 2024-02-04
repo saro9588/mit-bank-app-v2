@@ -82,13 +82,15 @@ const Transactions = ({ session }) => {
       </div>
       <div className="deposit">
         <h3>Deposit</h3>
-        <input
-          type="number"
-          min="0"
-          value={deposit}
-          style={{ width: "300px", height: "30px" }}
-          onChange={(e) => setDeposit(Number(e.target.value))}
-        />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value={deposit}
+            style={{ width: "150px", height: "30px" }}
+            onChange={(e) => setDeposit(Number(e.target.value))}
+          />
+        </div>
         <div style={{ marginTop: "10px" }}>
           <button onClick={handleDeposit}>Deposit</button>
         </div>
@@ -96,13 +98,15 @@ const Transactions = ({ session }) => {
       -- or --
       <div className="withdraw">
         <h3>Withdraw</h3>
-        <input
-          type="number"
-          min="0"
-          value={withdraw}
-          style={{ width: "300px", height: "30px" }}
-          onChange={(e) => setWithdraw(Number(e.target.value))}
-        />
+        <div>
+          <input
+            type="number"
+            min="0"
+            value={withdraw}
+            style={{ width: "150px", height: "30px" }}
+            onChange={(e) => setWithdraw(Number(e.target.value))}
+          />
+        </div>
         <div style={{ marginTop: "10px" }}>
           <button onClick={handleWithdraw}>Withdraw</button>
         </div>

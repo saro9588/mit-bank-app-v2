@@ -26,10 +26,10 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="main">
       {!session ? (
         <>
-          <div className="main">
+          <div>
             <h2>Welcome to the Bank App</h2>
             <h4 className="h4">
               Here you can create an account, deposit, withdraw money and check
