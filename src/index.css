@@ -51,6 +51,7 @@ button:focus-visible {
 @media (prefers-color-scheme: dark) {
   :root {
     color: white; /* White text color in dark mode */
+    background-color: black; /* Black background color in dark mode */
   }
 
   a {
