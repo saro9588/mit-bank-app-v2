@@ -42,13 +42,13 @@
   padding: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: rgb(246, 241, 241);
   }
 
   .card {
-    background-color: #444;
+    background-color: rgb(188, 204, 190);
   }
 }
