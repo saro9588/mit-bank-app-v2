@@ -31,10 +31,10 @@ function App() {
         <>
           <div>
             <h2>Welcome to the Bank App</h2>
-            <h4 className="h4">
+            <p className="h4">
               Here you can create an account, deposit, withdraw money and check
               your balance.
-            </h4>
+            </p>
             <div>
               <Auth />
               <p>-- or --</p>
