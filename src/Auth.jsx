@@ -51,7 +51,7 @@ export default function Auth() {
         </div>
         <div>
           <button
-            style={{ marginTop: "10px", marginBottom: "10px" }}
+            style={{ marginTop: "10px", marginBottom: "20px" }}
             disabled={loading}
           >
             {loading ? <span>Loading</span> : <span>Sign up</span>}

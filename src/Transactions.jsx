@@ -87,10 +87,10 @@ const Transactions = ({ session }) => {
     <div className="form">
       <div style={{ display: "grid", gap: "20px" }}>
         <div className="card">
-          <h3>Current Balance: ${balance}</h3>
+          <h2>Current Balance: ${balance}</h2>
         </div>
         <div className="card">
-          <h2>Transactions</h2>
+          <h3>Transactions</h3>
         </div>
       </div>
       <div className="deposit">

@@ -35,7 +35,14 @@ function App() {
               Here you can create an account, deposit, withdraw money and check
               your balance.
             </p>
-            <div>
+            <hr
+              style={{
+                width: "80%",
+                marginBottom: "20px",
+                border: "0.5px solid #000",
+              }}
+            />
+            <div style={{ display: "grid", justifyContent: "center" }}>
               <Auth />
               <p>-- or --</p>
               <Login />
@@ -62,8 +69,8 @@ function App() {
             </div>
             <hr
               style={{
-                width: "100%",
-                margin: "4px 0",
+                width: "80%",
+                marginBottom: "20px",
                 border: "0.5px solid #000",
               }}
             />
