@@ -63,7 +63,7 @@ function App() {
             <hr
               style={{
                 width: "100%",
-                margin: "8px 0",
+                margin: "4px 0",
                 border: "0.5px solid #000",
               }}
             />

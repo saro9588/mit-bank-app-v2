@@ -85,9 +85,13 @@ const Transactions = ({ session }) => {
 
   return (
     <div className="form">
-      <h2>Transactions</h2>
-      <div className="card">
-        <h3>Current Balance: ${balance}</h3>
+      <div style={{ display: "grid", gap: "20px" }}>
+        <div className="card">
+          <h3>Current Balance: ${balance}</h3>
+        </div>
+        <div className="card">
+          <h2>Transactions</h2>
+        </div>
       </div>
       <div className="deposit">
         <h3>Deposit</h3>
@@ -100,7 +104,7 @@ const Transactions = ({ session }) => {
             onChange={(e) => setDeposit(Number(e.target.value))}
           />
         </div>
-        <div style={{ marginTop: "10px" }}>
+        <div style={{ marginTop: "20px" }}>
           <button onClick={handleDeposit}>Deposit</button>
         </div>
       </div>
@@ -116,7 +120,7 @@ const Transactions = ({ session }) => {
             onChange={(e) => setWithdraw(Number(e.target.value))}
           />
         </div>
-        <div style={{ marginTop: "10px" }}>
+        <div style={{ marginTop: "20px" }}>
           <button onClick={handleWithdraw}>Withdraw</button>
         </div>
       </div>
