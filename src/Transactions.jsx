@@ -28,13 +28,14 @@ const Transactions = ({ session }) => {
 
   const handleDeposit = async () => {
     const newBalance = balance + deposit;
-
-    const { data, error } = await supabase.from("accounts").upsert([
-      {
-        id: user.id,
-        balance: newBalance,
-      },
-    ]);
+    const { data: account, error: accountError } = await supabase
+      .from("accounts")
+      .upsert([
+        {
+          id: user.id,
+          balance: newBalance,
+        },
+      ]);
 
     if (error) {
       console.error(error);
@@ -43,6 +44,14 @@ const Transactions = ({ session }) => {
       setBalance(newBalance);
       setDeposit("");
     }
+    const { data: transactions, error: transactionError } = await supabase
+      .from("transactions")
+      .insert([
+        {
+          id: user.id,
+          deposit: deposit,
+        },
+      ]);
   };
 
   const handleWithdraw = async () => {
