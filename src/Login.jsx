@@ -25,21 +25,21 @@ const login = () => {
       <form onSubmit={handleLogIn}>
         <div style={{ marginBottom: "10px" }}>
           <input
+            className="inputField"
             type="email"
             placeholder="Your email"
             value={userEmail}
             required={true}
-            style={{ width: "300px", height: "35px" }}
             onChange={(e) => setUserEmail(e.target.value)}
           />
         </div>
         <div style={{ marginBottom: "10px" }}>
           <input
+            className="inputField"
             type="password"
             placeholder="Your password"
             value={userPassword}
             required={true}
-            style={{ width: "300px", height: "35px" }}
             onChange={(e) => setUserPassword(e.target.value)}
           />
         </div>

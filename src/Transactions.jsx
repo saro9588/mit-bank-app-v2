@@ -97,10 +97,10 @@ const Transactions = ({ session }) => {
         <h3>Deposit</h3>
         <div>
           <input
+            className="inputField"
             type="number"
             min="0"
             value={deposit}
-            style={{ width: "150px", height: "30px" }}
             onChange={(e) => setDeposit(Number(e.target.value))}
           />
         </div>
@@ -113,10 +113,10 @@ const Transactions = ({ session }) => {
         <h3>Withdraw</h3>
         <div>
           <input
+            className="inputField"
             type="number"
             min="0"
             value={withdraw}
-            style={{ width: "150px", height: "30px" }}
             onChange={(e) => setWithdraw(Number(e.target.value))}
           />
         </div>

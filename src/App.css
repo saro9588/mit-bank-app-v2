@@ -43,6 +43,10 @@
   padding: 2px;
 }
 
+.inputField {
+  width: 280px;
+  height: 35px;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: black;
