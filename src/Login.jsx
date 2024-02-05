@@ -29,7 +29,7 @@ const login = () => {
             placeholder="Your email"
             value={userEmail}
             required={true}
-            style={{ width: "300px", height: "30px", borderRadius: "8px" }}
+            style={{ width: "300px", height: "35px" }}
             onChange={(e) => setUserEmail(e.target.value)}
           />
         </div>
@@ -39,7 +39,7 @@ const login = () => {
             placeholder="Your password"
             value={userPassword}
             required={true}
-            style={{ width: "300px", height: "30px", borderRadius: "8px" }}
+            style={{ width: "300px", height: "35px" }}
             onChange={(e) => setUserPassword(e.target.value)}
           />
         </div>

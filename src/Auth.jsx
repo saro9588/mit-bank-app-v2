@@ -34,7 +34,7 @@ export default function Auth() {
             placeholder="Your email"
             value={email}
             required={true}
-            style={{ width: "300px", height: "30px", borderRadius: "8px" }}
+            style={{ width: "300px", height: "35px" }}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
@@ -45,7 +45,7 @@ export default function Auth() {
             placeholder="Your password"
             value={password}
             required={true}
-            style={{ width: "300px", height: "30px", borderRadius: "8px" }}
+            style={{ width: "300px", height: "35px" }}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>

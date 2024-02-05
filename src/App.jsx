@@ -60,6 +60,13 @@ function App() {
               <h3>Welcome</h3>
               <h3>{`${session.user.email}!`}</h3>
             </div>
+            <hr
+              style={{
+                width: "100%",
+                margin: "8px 0",
+                border: "0.5px solid #000",
+              }}
+            />
             <Transactions key={session.user.id} session={session} />
           </div>
         </>

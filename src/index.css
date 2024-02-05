@@ -36,7 +36,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #b5bfb8;
+  background-color: #afb1dc;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -54,6 +54,6 @@ button:focus-visible {
   }
 
   .card {
-    background-color: rgb(188, 204, 190);
+    background-color: rgb(222, 221, 239);
   }
 }
