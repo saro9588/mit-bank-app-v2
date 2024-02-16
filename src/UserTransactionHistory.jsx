@@ -11,7 +11,7 @@ const UserTransactionHistory = ({ session }) => {
     const fetchUserTransactionHistory = async () => {
       const { data, error } = await supabase
         .from("transactions")
-        .select("deposit", "withdraw")
+        .select()
         .eq("id", user.id);
 
       if (error) {
