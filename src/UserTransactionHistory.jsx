@@ -34,7 +34,7 @@ const UserTransactionHistory = ({ session }) => {
   return (
     <div>
       <h3>User Transaction History</h3>
-      <div>
+      <div style={{ display: "grid", justifyContent: "center" }}>
         <table>
           <thead>
             <tr>
@@ -48,7 +48,7 @@ const UserTransactionHistory = ({ session }) => {
               data.map((transaction, index) => (
                 <tr key={transaction.transaction_id}>
                   <td>{index + 1}</td>
-                  <td>{transaction.deposit}</td>
+                  <td>${transaction.deposit}</td>
                   <td>{transaction.created_at}</td>
                 </tr>
               ))}
