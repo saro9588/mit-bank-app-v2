@@ -29,6 +29,7 @@ const Transactions = ({ session }) => {
   const handleDeposit = async () => {
     const newBalance = balance + deposit;
     const userDeposit = deposit;
+
     const { data: account, error: accountError } = await supabase
       .from("accounts")
       .upsert([
@@ -51,6 +52,7 @@ const Transactions = ({ session }) => {
         {
           id: user.id,
           deposit: deposit,
+          created_at: new Date().toISOString(),
         },
       ]);
     if (transactionError) {
@@ -63,26 +65,46 @@ const Transactions = ({ session }) => {
   };
 
   const handleWithdraw = async () => {
+    const userWithdraw = withdraw;
+
     if (withdraw > balance) {
       console.error("Insufficient funds for withdrawal");
       setError("Insufficient funds for withdrawal");
       return;
     }
     const newBalance = balance - withdraw;
-    const { data, error } = await supabase.from("accounts").upsert([
-      {
-        id: user.id,
-        balance: newBalance,
-      },
-    ]);
+    const { data: account, error: accountError } = await supabase
+      .from("accounts")
+      .upsert([
+        {
+          id: user.id,
+          balance: newBalance,
+        },
+      ]);
 
-    if (error) {
-      console.error(error);
+    if (accountError) {
+      console.error(accountError);
     } else {
       console.log("Withdrawal successful. New balance:", newBalance);
       setBalance(newBalance);
       setError("");
       setWithdraw("");
+    }
+
+    const { data: transactions, error: transactionError } = await supabase
+      .from("transactions")
+      .insert([
+        {
+          id: user.id,
+          withdraw: withdraw,
+          created_at: new Date().toISOString(),
+        },
+      ]);
+    if (transactionError) {
+      console.error(transactionError);
+    } else {
+      console.log("Withdraw successful. Withdraw Amount:", userWithdraw);
+      setWithdraw(userWithdraw);
     }
   };
 

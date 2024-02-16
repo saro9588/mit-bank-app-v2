@@ -3,7 +3,7 @@ import { supabase } from "./supabaseClient";
 
 const UserTransactionHistory = ({ session }) => {
   const [data, setData] = useState([]);
-  const [createdAt, setCreatedAt] = useState("");
+  // const [createdAt, setCreatedAt] = useState("");
 
   const { user } = session;
 
@@ -11,25 +11,19 @@ const UserTransactionHistory = ({ session }) => {
     const fetchUserTransactionHistory = async () => {
       const { data, error } = await supabase
         .from("transactions")
-        .select("deposit", "created_at", "transaction_id")
+        .select("deposit", "withdraw")
         .eq("id", user.id);
 
       if (error) {
         console.error(error);
       } else {
         setData(data || []);
-        setCreatedAt();
         console.log(data);
-        console.log(data.created_at);
       }
     };
 
     fetchUserTransactionHistory();
   }, [user.id]);
-
-  const { created_at } = data;
-  console.log(data);
-  console.log(created_at);
 
   return (
     <div>
@@ -40,6 +34,7 @@ const UserTransactionHistory = ({ session }) => {
             <tr>
               <th>#</th>
               <th>Deposit Amount</th>
+              <th>Withdraw Amount</th>
               <th>Date</th>
             </tr>
           </thead>
@@ -49,6 +44,7 @@ const UserTransactionHistory = ({ session }) => {
                 <tr key={transaction.transaction_id}>
                   <td>{index + 1}</td>
                   <td>${transaction.deposit}</td>
+                  <td>${transaction.withdraw}</td>
                   <td>{transaction.created_at}</td>
                 </tr>
               ))}
