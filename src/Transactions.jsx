@@ -28,6 +28,7 @@ const Transactions = ({ session }) => {
 
   const handleDeposit = async () => {
     const newBalance = balance + deposit;
+    const userDeposit = deposit;
     const { data: account, error: accountError } = await supabase
       .from("accounts")
       .upsert([
@@ -52,6 +53,13 @@ const Transactions = ({ session }) => {
           deposit: deposit,
         },
       ]);
+    if (transactionError) {
+      console.error(transactionError);
+    } else {
+      console.log("Deposit successful. Deposit Amount:", userDeposit);
+      setDeposit(userDeposit);
+      setDeposit("");
+    }
   };
 
   const handleWithdraw = async () => {
@@ -78,11 +86,12 @@ const Transactions = ({ session }) => {
     }
   };
 
-  const handleSignOut = () => {
-    supabase.auth.signOut();
-    // console.log("User Session:", session.user);
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
   };
-
+  useEffect(() => {
+    console.log("User Session:", session.user);
+  });
   return (
     <div className="form">
       <div style={{ display: "grid", gap: "20px" }}>

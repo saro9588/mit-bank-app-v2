@@ -5,9 +5,12 @@ import Auth from "./Auth";
 import Login from "./Login";
 // import Account from "./Account";
 import Transactions from "./Transactions";
+import UserTransactionHistory from "./UserTransactionHistory";
+// import SessionTest from "./SessionTest";
 
 function App() {
   const [session, setSession] = useState(null);
+  // const [isLoggedIn, setIsLoggedIn] = useState(0);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -20,13 +23,15 @@ function App() {
         const { user } = session;
       } else {
         setSession(null);
+        console.log("Session is set to null", session);
       }
       console.log("user session:", session);
     });
   }, []);
-
   return (
     <div className="main">
+      {/* <SessionTest session={session} setStateCallback={setIsLoggedIn} />
+      <h1>{isLoggedIn}</h1> */}
       {!session ? (
         <>
           <div>
@@ -75,6 +80,7 @@ function App() {
               }}
             />
             <Transactions key={session.user.id} session={session} />
+            <UserTransactionHistory session={session} />
           </div>
         </>
       )}
