@@ -122,9 +122,9 @@ const Transactions = ({ session }) => {
         <div className="card">
           <h2>Current Balance: ${balance}</h2>
         </div>
-        <div className="card">
+        {/* <div className="card">
           <h3>Transactions</h3>
-        </div>
+        </div> */}
       </div>
       <div className="deposit">
         <h3>Deposit</h3>

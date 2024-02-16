@@ -26,8 +26,16 @@ const UserTransactionHistory = ({ session }) => {
   }, [user.id]);
 
   return (
-    <div>
-      <h3>User Transaction History</h3>
+    <>
+      <div
+        style={{
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          backgroundColor: "rgb(222, 221, 239)",
+        }}
+      >
+        <h3>User Transaction History</h3>
+      </div>
       <div className="transaction-table-container">
         <table className="transaction-table">
           <thead>
@@ -51,7 +59,7 @@ const UserTransactionHistory = ({ session }) => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 
