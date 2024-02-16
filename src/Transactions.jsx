@@ -45,6 +45,7 @@ const Transactions = ({ session }) => {
       console.log("Deposit successful. New balance:", newBalance);
       setBalance(newBalance);
       setDeposit("");
+      window.location.reload();
     }
     const { data: transactions, error: transactionError } = await supabase
       .from("transactions")
@@ -89,6 +90,7 @@ const Transactions = ({ session }) => {
       setBalance(newBalance);
       setError("");
       setWithdraw("");
+      window.location.reload();
     }
 
     const { data: transactions, error: transactionError } = await supabase
