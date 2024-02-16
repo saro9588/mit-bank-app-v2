@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { supabase } from "./supabaseClient";
 import Auth from "./Auth";
 import Login from "./Login";
-// import Account from "./Account";
 import Transactions from "./Transactions";
 import UserTransactionHistory from "./UserTransactionHistory";
 // import SessionTest from "./SessionTest";
@@ -56,32 +55,25 @@ function App() {
         </>
       ) : (
         <>
-          <div className="main">
-            {/* <Account
-              key={session.user.id}
-              session={session}
-              setSession={setSession}
-            /> */}
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                gap: "4px",
-              }}
-            >
-              <h3>Welcome</h3>
-              <h3>{`${session.user.email}!`}</h3>
-            </div>
-            <hr
-              style={{
-                width: "80%",
-                marginBottom: "20px",
-                border: "0.5px solid #000",
-              }}
-            />
-            <Transactions key={session.user.id} session={session} />
-            <UserTransactionHistory session={session} />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "4px",
+            }}
+          >
+            <h3>Welcome</h3>
+            <h3>{`${session.user.email}!`}</h3>
           </div>
+          <hr
+            style={{
+              width: "80%",
+              marginBottom: "20px",
+              border: "0.5px solid #000",
+            }}
+          />
+          <Transactions key={session.user.id} session={session} />
+          <UserTransactionHistory session={session} />
         </>
       )}
     </div>

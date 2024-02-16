@@ -48,6 +48,29 @@
   width: 280px;
   height: 35px;
 }
+
+.transaction-table-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.transaction-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+.transaction-table th {
+  background-color: #f2f2f2;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: black;

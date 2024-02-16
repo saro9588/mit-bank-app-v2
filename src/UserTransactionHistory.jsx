@@ -28,8 +28,8 @@ const UserTransactionHistory = ({ session }) => {
   return (
     <div>
       <h3>User Transaction History</h3>
-      <div style={{ display: "grid", justifyContent: "center" }}>
-        <table>
+      <div className="transaction-table-container">
+        <table className="transaction-table">
           <thead>
             <tr>
               <th>#</th>
